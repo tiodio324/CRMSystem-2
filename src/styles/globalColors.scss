@@ -1,0 +1,83 @@
+// ============================================
+// Global Colors - Professional Blue-Gray CRM Theme
+// ============================================
+
+$color-primary-darkest: #1E3A5F;
+$color-primary-dark: #2C5282;
+$color-primary: #3182CE;
+$color-primary-medium: #4299E1;
+$color-primary-light: #63B3ED;
+$color-primary-lighter: #90CDF4;
+$color-primary-lightest: #BEE3F8;
+
+$color-accent: #38B2AC;
+$color-accent-light: #B2F5EA;
+$color-accent-warm: #ED8936;
+
+$color-bg-primary: #F7FAFC;
+$color-bg-secondary: #EDF2F7;
+$color-bg-tertiary: #E2E8F0;
+$color-bg-dark: #1A365D;
+
+$color-text-primary: #1A202C;
+$color-text-secondary: #2D3748;
+$color-text-muted: #718096;
+$color-text-light: #A0AEC0;
+$color-text-inverse: #FFFFFF;
+
+$color-success: #38A169;
+$color-success-light: #C6F6D5;
+$color-warning: #DD6B20;
+$color-warning-light: #FEEBC8;
+$color-error: #E53E3E;
+$color-error-light: #FED7D7;
+$color-info: #3182CE;
+$color-info-light: #BEE3F8;
+
+$color-border-primary: #E2E8F0;
+$color-border-light: #EDF2F7;
+$color-border-dark: #CBD5E0;
+
+$color-shadow: rgba(26, 32, 44, 0.1);
+$color-shadow-medium: rgba(26, 32, 44, 0.15);
+$color-shadow-dark: rgba(26, 32, 44, 0.25);
+
+$gradient-primary: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+$gradient-header: linear-gradient(180deg, $color-primary-darkest 0%, $color-primary-dark 100%);
+$gradient-card: linear-gradient(145deg, $color-bg-primary 0%, $color-bg-secondary 100%);
+
+:root {
+  --color-primary-darkest: #{$color-primary-darkest};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-primary: #{$color-primary};
+  --color-primary-medium: #{$color-primary-medium};
+  --color-primary-light: #{$color-primary-light};
+  --color-primary-lighter: #{$color-primary-lighter};
+  --color-primary-lightest: #{$color-primary-lightest};
+  --color-accent: #{$color-accent};
+  --color-accent-light: #{$color-accent-light};
+  --color-accent-warm: #{$color-accent-warm};
+  --color-bg-primary: #{$color-bg-primary};
+  --color-bg-secondary: #{$color-bg-secondary};
+  --color-bg-tertiary: #{$color-bg-tertiary};
+  --color-bg-dark: #{$color-bg-dark};
+  --color-text-primary: #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-text-muted: #{$color-text-muted};
+  --color-text-light: #{$color-text-light};
+  --color-text-inverse: #{$color-text-inverse};
+  --color-success: #{$color-success};
+  --color-success-light: #{$color-success-light};
+  --color-warning: #{$color-warning};
+  --color-warning-light: #{$color-warning-light};
+  --color-error: #{$color-error};
+  --color-error-light: #{$color-error-light};
+  --color-info: #{$color-info};
+  --color-info-light: #{$color-info-light};
+  --color-border-primary: #{$color-border-primary};
+  --color-border-light: #{$color-border-light};
+  --color-border-dark: #{$color-border-dark};
+  --color-shadow: #{$color-shadow};
+  --color-shadow-medium: #{$color-shadow-medium};
+  --color-shadow-dark: #{$color-shadow-dark};
+}
