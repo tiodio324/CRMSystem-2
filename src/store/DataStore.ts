@@ -63,7 +63,7 @@ export class DataStore {
   createClient = async (data: ClientFormData): Promise<Client | null> => {
     if (!authStore.canManageClients()) return null;
     const now = new Date().toISOString();
-    const client: Client = { id: uuidv4(), ...data, status: data.status || 'lead', isActive: true, createdAt: now, updatedAt: now };
+    const client: Client = { id: uuidv4(), ...data, company: data.company || '', notes: data.notes || '', source: data.source || '', status: data.status || 'lead', isActive: true, createdAt: now, updatedAt: now };
     try { await FirebaseService.setData(`clients/${client.id}`, client); runInAction(() => { this.clients.push(client); }); return client; }
     catch { return null; }
   };
@@ -87,7 +87,7 @@ export class DataStore {
     if (!authStore.canManageDeals()) return null;
     const client = this.getClientById(data.clientId); if (!client) return null;
     const now = new Date().toISOString();
-    const deal: Deal = { id: uuidv4(), ...data, clientName: client.name, stage: data.stage || 'new', probability: data.probability || 10, createdAt: now, updatedAt: now };
+    const deal: Deal = { id: uuidv4(), ...data, description: data.description || '', clientName: client.name, stage: data.stage || 'new', probability: data.probability || 10, createdAt: now, updatedAt: now };
     try { await FirebaseService.setData(`deals/${deal.id}`, deal); runInAction(() => { this.deals.push(deal); }); return deal; }
     catch { return null; }
   };
@@ -103,7 +103,7 @@ export class DataStore {
   createTask = async (data: TaskFormData): Promise<Task | null> => {
     if (!authStore.canManageTasks()) return null;
     const now = new Date().toISOString();
-    const task: Task = { id: uuidv4(), ...data, priority: data.priority || 'medium', status: data.status || 'todo', createdAt: now, updatedAt: now };
+    const task: Task = { id: uuidv4(), ...data, description: data.description || '', clientId: data.clientId || '', dealId: data.dealId || '', assignee: data.assignee || '', priority: data.priority || 'medium', status: data.status || 'todo', createdAt: now, updatedAt: now };
     try { await FirebaseService.setData(`tasks/${task.id}`, task); runInAction(() => { this.tasks.push(task); }); return task; }
     catch { return null; }
   };

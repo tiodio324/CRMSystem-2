@@ -2,85 +2,60 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
+// CRM-System: Строгие корпоративные карточки
 .card {
-  @include card;
   display: flex;
   flex-direction: column;
-  border-radius: $radius-md;
-}
-
-// Variants
-.default {
   background: $color-bg-primary;
+  border-radius: $radius-sm;
+  border: 1px solid $color-border-primary;
+  overflow: hidden;
+  transition: all $transition-fast;
 }
 
-.outlined {
-  background: transparent;
-  box-shadow: none;
+.default { background: $color-bg-primary; }
+.outlined { 
+  background: transparent; 
   border: 2px solid $color-border-primary;
 }
-
-.elevated {
-  background: $color-bg-primary;
-  box-shadow: $shadow-lg;
+.elevated { 
+  background: $color-bg-primary; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-// Padding
-.padding-none {
-  .content {
-    padding: 0;
-  }
-}
+.padding-none .content { padding: 0; }
+.padding-sm .content { padding: $spacing-sm; }
+.padding-md .content { padding: $spacing-md; }
+.padding-lg .content { padding: $spacing-lg; }
 
-.padding-sm {
-  .content {
-    padding: $spacing-sm;
-  }
-}
-
-.padding-md {
-  .content {
-    padding: $spacing-md;
-  }
-}
-
-.padding-lg {
-  .content {
-    padding: $spacing-lg;
-  }
-}
-
-// Hoverable
 .hoverable {
   cursor: pointer;
   
   &:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border-color: $color-primary-light;
+    border-color: $color-primary;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 }
 
-// Sections
 .header {
-  padding: $spacing-md;
-  border-bottom: 1px solid $color-border-light;
+  padding: $spacing-sm $spacing-md;
+  background: $color-bg-secondary;
+  border-bottom: 1px solid $color-border-primary;
+  text-transform: uppercase;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.5px;
+  color: $color-text-secondary;
   
-  &:empty {
-    display: none;
-  }
+  &:empty { display: none; }
 }
 
-.content {
-  flex: 1;
-}
+.content { flex: 1; }
 
 .footer {
   padding: $spacing-sm $spacing-md;
-  border-top: 1px solid $color-border-light;
   background: $color-bg-tertiary;
-  border-radius: 0 0 $radius-md $radius-md;
+  border-top: 1px solid $color-border-primary;
   
-  &:empty {
-    display: none;
-  }
+  &:empty { display: none; }
 }

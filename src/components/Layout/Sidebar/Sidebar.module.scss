@@ -12,7 +12,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.5);
     z-index: $z-modal-backdrop - 1;
   }
 }
@@ -24,7 +24,7 @@
   bottom: 0;
   width: $sidebar-width;
   background: $color-bg-primary;
-  border-right: 1px solid $color-border-light;
+  border-right: 1px solid $color-border-primary;
   z-index: $z-sticky;
   display: flex;
   flex-direction: column;
@@ -79,25 +79,27 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: $spacing-xs;
+  gap: 2px;
 }
 
 .navItem {
   @include flex-start;
   gap: $spacing-md;
   width: 100%;
-  padding: $spacing-md $spacing-md;
+  padding: $spacing-md;
   background: transparent;
   border: none;
-  border-radius: $radius-md;
+  border-radius: $radius-sm;
+  border-left: 3px solid transparent;
   color: $color-text-secondary;
   font-family: $font-family-secondary;
-  font-size: $font-size-base;
+  font-size: $font-size-sm;
   font-weight: $font-weight-medium;
   text-align: left;
   cursor: pointer;
   transition: all $transition-fast;
-  border-left: 3px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   
   &:hover {
     background: $color-bg-tertiary;
@@ -109,6 +111,7 @@
     background: $color-primary-lightest;
     color: $color-primary-dark;
     border-left-color: $color-primary;
+    font-weight: $font-weight-bold;
     
     .icon {
       color: $color-primary;
@@ -125,8 +128,8 @@
   transition: color $transition-fast;
   
   svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -137,7 +140,7 @@
 
 .footer {
   padding: $spacing-md;
-  border-top: 1px solid $color-border-light;
+  border-top: 1px solid $color-border-primary;
   text-align: center;
   transition: opacity $transition-fast;
 }
@@ -146,9 +149,6 @@
   font-size: $font-size-xs;
   color: $color-text-muted;
   margin: 0;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
